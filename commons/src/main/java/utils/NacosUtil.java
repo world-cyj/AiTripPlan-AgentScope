@@ -18,9 +18,12 @@ public class NacosUtil {
 
     public static AiService getNacosClient() throws NacosException {
         Properties properties = new Properties();
-        properties.put(PropertyKeyConst.SERVER_ADDR,
-                getOptionalValue("NACOS_SERVER_ADDR", DEFAULT_NACOS_SERVER_ADDR));
+        properties.put(PropertyKeyConst.SERVER_ADDR, getNacosServerAddr());
         return AiFactory.createAiService(properties);
+    }
+
+    public static String getNacosServerAddr() {
+        return getOptionalValue("NACOS_SERVER_ADDR", DEFAULT_NACOS_SERVER_ADDR);
     }
 
     private static String getOptionalValue(String key, String defaultValue) {

@@ -1,0 +1,13 @@
+server:
+  port: 8082
+
+spring:
+  main:
+    lazy-initialization: true
+
+agentscope:
+  a2a:
+    server:
+      enabled: ${A2A_SERVER_ENABLED:false}
+    nacos:
+      server-addr: ${NACOS_SERVER_ADDR:localhost:8848}

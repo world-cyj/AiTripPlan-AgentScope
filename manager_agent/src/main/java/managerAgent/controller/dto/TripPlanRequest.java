@@ -1,10 +1,8 @@
-﻿package managerAgent.controller.dto;
+package managerAgent.controller.dto;
 
-/**
- * Trip plan request payload
- */
 public class TripPlanRequest {
 
+    private String requestId;
     private String origin;
     private String destination;
     private String travelDate;
@@ -12,6 +10,14 @@ public class TripPlanRequest {
     private String budget;
     private String transportMode;
     private String extraRequirements;
+
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public String getOrigin() {
         return origin;

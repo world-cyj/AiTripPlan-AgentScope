@@ -1,0 +1,1138 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.imooc:manager_agent >-----------------------
+[INFO] Building manager_agent 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:4.0.2:run (default-cli) > test-compile @ manager_agent >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ manager_agent ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ manager_agent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ manager_agent ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\AiTripPlan-AgentScope\manager_agent\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ manager_agent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:4.0.2:run (default-cli) < test-compile @ manager_agent <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:4.0.2:run (default-cli) @ manager_agent ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.2)
+
+2026 [INFO] Starting ManagerAgentApplication using Java 21.0.10 with PID 73496 (D:\AiTripPlan-AgentScope\manager_agent\target\classes started by admin in D:\AiTripPlan-AgentScope\manager_agent)
+2026 [INFO] No active profile set, falling back to 1 default profile: "default"
+2026 [INFO] Tomcat initialized with port 18082 (http)
+2026 [INFO] Initializing ProtocolHandler ["http-nio-18082"]
+2026 [INFO] Starting service [Tomcat]
+2026 [INFO] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026 [INFO] Root WebApplicationContext: initialization completed in 937 ms
+2026 [INFO] Starting ProtocolHandler ["http-nio-18082"]
+2026 [INFO] Tomcat started on port 18082 (http) with context path '/'
+2026 [INFO] Adding welcome page: class path resource [static/index.html]
+2026 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026 [INFO] Initializing Servlet 'dispatcherServlet'
+2026 [INFO] Started ManagerAgentApplication in 1.642 seconds (process running for 2.299)
+2026 [INFO] Completed initialization in 254 ms
+2026 [INFO] Calling TripPlannerAgent, nacos=192.168.32.129:8848, task=Create trip content plan. origin=Shenzhen, destination=Huizhou, travelDate=2026-05-01, preferences=nature, food, budget=1500.
+2026 [INFO] Calling RouteMakingAgent, nacos=192.168.32.129:8848, task=Create driving route plan. origin=Shenzhen, destination=Huizhou, travelDate=2026-05-01, transportMode=self-driving.
+2026 [INFO] Nacos Logging Adapter Builder: com.alibaba.nacos.logger.adapter.logback12.LogbackNacosLoggingAdapterBuilder
+2026 [INFO] Nacos Logging Adapter Builder: com.alibaba.nacos.logger.adapter.logback14.LogbackNacosLoggingAdapterBuilder
+2026 [INFO] Nacos Logging Adapter: com.alibaba.nacos.logger.adapter.logback14.LogbackNacosLoggingAdapter match ch.qos.logback.classic.Logger success.
+2026 [INFO] Nacos Logging Adapter Builder: com.alibaba.nacos.logger.adapter.log4j2.Log4j2NacosLoggingAdapterBuilder
+2026 [INFO] Ready to get current node abilities...
+2026 [INFO] Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+2026 [INFO] Initialize current abilities finish...
+2026 [INFO] [AbilityControlManager] Successfully initialize AbilityControlManager
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026 [INFO] [9a967217-ce0e-4ed0-a5b6-59a3e20347b5] A2aAgent start call.
+2026 [INFO] [09036f8a-5499-4689-b865-d9844051cea3] A2aAgent start call.
+2026 [INFO] [09036f8a-5499-4689-b865-d9844051cea3] A2A Task 4450997d-9bf3-49fc-92cb-7e7b1ef76a3a with status TaskStatus[state=SUBMITTED, message=null, timestamp=2026-04-20T00:59:39.836879600Z]
+2026 [INFO] [9a967217-ce0e-4ed0-a5b6-59a3e20347b5] A2A Task c502ece0-967b-495c-b77a-f795f363e440 with status TaskStatus[state=SUBMITTED, message=null, timestamp=2026-04-20T00:59:39.836879600Z]
+2026 [INFO] [9a967217-ce0e-4ed0-a5b6-59a3e20347b5] A2aAgent complete call.
+2026 [INFO] RouteMakingAgent response from A2A: I
+'ll
+ create a driving
+ route plan from
+ Shenzhen to Huizhou
+ for your self-driving trip
+ on May 1,
+ 2026.
+
+
+#
+ Driving Route Plan
+: Shenzhen
+ to Huiz
+hou
+
+## Trip
+ Details
+- **
+Origin**: Shenzhen
+
+- **Destination**: Hu
+izhou
+- **Travel
+ Date**: May 1,
+ 2026
+
+- **Transport Mode**: Self
+-driving
+
+## Route Summary
+
+- **Total Distance**:
+ 90.7 km
+ (approximately 56
+.4 miles)
+- **
+Estimated Duration**: 1 hour
+ 36 minutes (5
+,756 seconds)
+
+- **Toll Fee**:
+ ¥39
+
+- **Traffic Condition**: Normal
+ traffic expected
+
+## Route
+ Overview
+This route
+ takes you from central
+ Shenzhen to Huizhou
+ via several major highways
+:
+
+1. Start
+ in Shenzhen and head west
+ on Futian 3rd
+ Road
+2. Turn
+ right onto Yitian Road
+, then continue onto
+ Hongli Road
+
+3. Follow Me
+iguan Road heading north
+
+4. Enter Nan
+ping Expressway (S3
+0)
+5. Connect
+ to Shuiguan Express
+way (G042
+2)
+6. Transfer to
+ Shenyang-Ha
+ikou Expressway
+ (G15)
+7
+. Take the Shui
+he Interchange to enter Chang
+shen Expressway (G
+25)
+8. Follow
+ the Changshen Expressway
+ Huizhou Branch Line
+
+9. Exit onto Shens
+hen Line and continue through Zh
+ongkai Avenue
+1
+0. Navigate through urban
+ Huizhou via
+ Hekang South Road and
+ Hekang North Road
+
+11. Finish on Yun
+shan West Road in Huiz
+hou
+
+## Travel
+ Tips for May 1
+, 2026
+
+- May 1st
+ is Labor Day in
+ China, which is a public
+ holiday. Expect heavier
+ traffic than usual, especially
+ during morning hours.
+-
+ The toll fee of ¥
+39 applies to this route
+.
+- Consider departing
+ early in the morning to
+ avoid peak holiday traffic
+.
+- Make sure your vehicle
+ has sufficient fuel for
+ the journey.
+- Have
+ your navigation system updated
+ before departure.
+
+Would
+ you like any additional information about
+ rest stops, attractions along the
+ route, or alternative transportation options
+?
+2026 [INFO] [09036f8a-5499-4689-b865-d9844051cea3] A2aAgent complete call.
+2026 [INFO] TripPlannerAgent response from A2A: #
+ Shenzhen to
+ Huizhou Nature & Food
+ Itinerary (May 1
+, 2026
+)
+
+## Day 1:
+ Natural Wonders of Huiz
+hou
+
+### Morning
+-
+ **7:30 AM
+**: Take early high-speed train
+ from Shenzhen North Station to
+ Huizhou South Station (
+approx. 30 minutes
+, 50-7
+0 RMB)
+- **
+9:00 AM**:
+ Head to **Luofu
+ Mountain** (罗浮山
+) - One of Guangdong
+'s most famous mountains with stunning
+ natural scenery, waterfalls,
+ and Taoist temples
+
+  - Entrance fee: 5
+4 RMB
+  -
+ Best hiking route: Zhu Ming
+ Cave area to Fei Yun
+ Ding (Flying Cloud Peak)
+
+  - Tip: Start early
+ to avoid crowds and midday
+ heat
+
+### Lunch
+-
+ **12:30
+ PM**: Local farmhouse restaurant near
+ Luofu Mountain
+
+  - Try: Mountain vegetables,
+ free-range chicken, and local
+ herbal soups
+  -
+ Budget: 60-
+80 RMB per person
+
+
+### Afternoon
+-
+ **2:00 PM
+**: Continue exploring Luofu
+ Mountain's scenic areas
+
+  - Visit Chongxu
+ Temple (冲虚古观
+), one of China's oldest
+ Taoist temples
+  -
+ Explore the Nine Waterfalls area
+
+- **5:0
+0 PM**: Head to Hu
+izhou city center
+
+###
+ Dinner
+- **7:
+00 PM**: **D
+ongjiang River Fish Restaurant**
+ (东江渔村)
+
+  - Famous for fresh Dong
+jiang river fish prepared in multiple
+ styles
+  - Must-
+try: Steamed mandarin
+ fish and salt-baked shrimp
+
+  - Budget:
+ 100-12
+0 RMB
+
+### Accom
+modation
+- **Economic
+ option**: Huizhou Youth Host
+el near West Lake (8
+0-100 R
+MB/night)
+- **
+Comfort option**: 7Days
+ Inn near Huizhou city
+ center (150-
+180 RMB/
+night)
+
+## Day 2
+: Coastal Beauty & Local Del
+icacies
+
+### Morning
+
+- **8:00
+ AM**: Breakfast at local con
+gee shop
+  - Try
+: Preserved egg and lean
+ pork congee with yout
+iao (fried dough sticks)
+
+  - Budget: 1
+5-20 RMB
+
+
+- **9:3
+0 AM**: Visit **X
+unliao Bay** (
+巽寮湾) - Beautiful
+ coastal area with clear water and
+ fine sand
+  - Entrance
+ to beach area: Free
+
+  - Optional boat tour:
+ 50-80
+ RMB
+  - Activities
+: Swimming, beach walking,
+ photography
+
+### Lunch
+-
+ **12:30
+ PM**: Seafood lunch at
+ Xunliao Bay fishing
+ village
+  - Freshly
+ caught prawns, crabs
+, and fish grilled or ste
+amed
+  - Budget:
+ 100-1
+30 RMB
+
+###
+ Afternoon
+- **2
+:30 PM**: Visit
+ **Shuangyue Bay
+** (双月湾)
+ - Famous for its unique double
+ bay formation visible from above
+
+  - Hike up to
+ the viewpoint for spectacular photos
+
+  - Visit local pearl farm
+ (optional, 30
+ RMB entry)
+- **
+5:00 PM**:
+ Return to Huizhou city
+
+
+### Dinner
+- **
+7:00 PM**:
+ **Old Huizhou Flavor
+ Restaurant** (老惠州味道
+)
+  - Specializes in
+ traditional Hakka cuisine
+
+  - Must-try: Salt
+-baked chicken, stuffed
+ tofu, and preserved vegetable dishes
+
+  - Budget:
+ 90-110
+ RMB
+
+## Day
+ 3: Cultural Exploration & Return
+
+
+### Morning
+- **
+8:30 AM**:
+ Visit **West Lake** (
+西湖) in Huicheng
+ District
+  - Free admission
+
+  - Beautiful lake with
+ pavilions, bridges,
+ and temples
+  - Rent
+ a paddle boat (optional,
+ 40-60
+ RMB for 30
+ minutes)
+
+- **10
+:30 AM**: Explore
+ **Zhaoyao Ancient
+ Village** (招瑶古
+村)
+  - Well-p
+reserved traditional architecture
+  -
+ Free admission
+  - Great
+ for photography and experiencing local culture
+
+
+### Lunch
+- **
+12:00 PM
+**: Local street food at Q
+iaodong Old Street (
+桥东老街)
+
+  - Try: Huizhou
+ rice dumplings, fish
+ ball noodles, and sugar cane
+ juice
+  - Budget:
+ 40-60
+ RMB
+
+- **2
+:00 PM**: Return
+ to Shenzhen via high-speed
+ train
+
+## Budget Breakdown
+
+- Transportation: 1
+50 RMB (round
+-trip train + local transport
+)
+- Accommodation:
+ 200 RMB (
+2 nights at economic option)
+
+- Meals: 45
+0 RMB (3 days
+)
+- Entrance fees & activities
+: 150 R
+MB
+- Miscellaneous: 1
+00 RMB
+-
+ **Total**: Approximately 1
+050 RMB (
+well within your 15
+00 RMB budget)
+
+
+## Travel Tips
+1.
+ May is warm in Huiz
+hou (25-3
+0°C) with possible rain
+ - bring light clothing,
+ sunscreen, and a small umbrella
+
+2. Book train tickets
+ in advance as May 1
+ is a holiday period
+3
+. For better photos at Sh
+uangyue Bay, consider
+ renting a drone (if you
+ have one) or hike to
+ the viewpoint
+4. Most
+ restaurants accept WeChat Pay/
+Alipay, but carry some
+ cash for small vendors
+5
+. The local dialect is Hak
+ka, but Mandarin is widely
+ understood
+2026 [INFO] Calling TripPlannerAgent, nacos=192.168.32.129:8848, task=Create trip content plan. origin=Shenzhen, destination=Huizhou, travelDate=2026-05-01, preferences=local food, free attractions, budget=1000.
+2026 [INFO] Calling RouteMakingAgent, nacos=192.168.32.129:8848, task=Create driving route plan. origin=Shenzhen, destination=Huizhou, travelDate=2026-05-01, transportMode=public transport.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026 [INFO] [e32a454f-84e1-46a7-bdf9-14188d3e7f20] A2aAgent start call.
+2026 [INFO] [f12f673a-26f9-4165-9236-1a0eb99d7672] A2aAgent start call.
+2026 [INFO] [f12f673a-26f9-4165-9236-1a0eb99d7672] A2A Task f6dfc386-efbf-4b32-9144-32028f59a031 with status TaskStatus[state=SUBMITTED, message=null, timestamp=2026-04-20T08:00:36.006552Z]
+2026 [INFO] [e32a454f-84e1-46a7-bdf9-14188d3e7f20] A2A Task 447a37b7-749c-4cdc-ae6c-8829f2248e97 with status TaskStatus[state=SUBMITTED, message=null, timestamp=2026-04-20T08:00:36.035231Z]
+2026 [INFO] RouteMakingAgent response from A2A: I
+'ll create a
+ public transportation
+ route
+ plan from Shenzhen to
+ Huizhou for your
+ trip on May
+ 1, 202
+6.
+
+
+I
+ apologize
+ for the error
+. Let
+ me try again with a more
+ specific approach for public transportation
+ between Shenzhen and Huiz
+hou.
+
+
+I
+ apologize
+ for the technical
+ difficulties. Let
+ me try a different approach to
+ provide you with public
+ transportation information from Shenzhen to
+ Huizhou.
+
+Since I
+'m experiencing technical issues
+ with the mapping tools, I
+'ll provide you with general public
+ transportation information based on common
+ routes between these cities
+:
+
+# Public Transportation Route
+ Plan: Shenzhen
+ to Huizhou
+
+##
+ Trip Details
+-
+ **Origin**: Shenzhen
+
+- **Destination**: Huiz
+hou
+- **Travel Date
+**: May 1,
+ 2026 (
+Labor Day holiday in
+ China)
+- **Transport Mode
+**: Public Transportation
+
+## Available
+ Options
+
+### Option
+ 1: Int
+ercity Bus
+
+- **Departure Points
+**: 
+  - Sh
+enzhen Luohu Bus
+ Station
+  -
+ Shenzhen Futian Bus Station
+
+  - Shenzhen B
+ao'an Bus Station
+
+- **Arrival Points**:
+ Huizhou Bus
+ Terminal
+- **
+Travel Time**: Approximately 1
+.5-2 hours
+
+- **Frequency**: B
+uses typically run every
+ 30-6
+0 minutes
+- **Cost
+**: Around ¥4
+0-60
+
+###
+ Option 2: Train
+ + Local Transport
+-
+ **Step 1**:
+ Take metro/subway to Sh
+enzhen North Railway Station or
+ Shenzhen East Railway
+ Station
+- **Step
+ 2**: Take a train to
+ Huizhou Railway
+ Station
+  - High
+-speed trains (G
+/D series) take
+ approximately 30-5
+0 minutes
+  - Regular
+ trains take approximately 1-
+1.5 hours
+
+- **Step 3
+**: From Huizhou
+ Railway Station, take
+ local bus or taxi
+ to your final destination
+-
+ **Cost**: Train
+ tickets range from ¥
+30-8
+0 depending on train
+ type
+
+### Option 3
+: Metro Connection (Partial
+)
+- Shenzhen Metro
+ Line 14 connects
+ to the border area
+ near Huizhou
+
+- You would
+ need to transfer to a bus
+ or taxi for the final leg
+ into Huizhou city
+ center
+
+## Travel
+ Tips for May
+ 1, 202
+6
+- May 1
+st is Labor Day in China
+, which is a major
+ public holiday
+- Expect significantly
+ higher passenger volumes on
+ all public transportation
+- Book
+ tickets in advance if
+ possible, especially for trains
+
+- Allow extra
+ travel time due to potential
+ delays and crowds
+- Consider
+ departing early in the
+ morning to avoid peak holiday traffic
+
+
+## Recommendations
+For
+ the most comfortable journey
+ on a holiday, I
+ recommend taking the high-speed train
+ if available, as it
+'s generally less affected
+ by road traffic congestion
+. However, train
+ tickets may sell out quickly
+ for holiday travel,
+ so booking in advance is
+ essential.
+
+Would you
+ like more specific information about
+ any of these options, or
+ would you prefer to try
+ planning this route again
+ closer to your travel date when
+ schedules are more finalized
+?
+2026 [INFO] [e32a454f-84e1-46a7-bdf9-14188d3e7f20] A2aAgent complete call.
+2026 [INFO] Calling RouteMakingAgent, nacos=192.168.32.129:8848, task=Create driving route plan. origin=Shenzhen, destination=Huizhou, travelDate=2026-05-01, transportMode=self-driving.
+2026 [INFO] Calling TripPlannerAgent, nacos=192.168.32.129:8848, task=Create trip content plan. origin=Shenzhen, destination=Huizhou, travelDate=2026-05-01, preferences=nature, food, easy walk, budget=2000.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026 [INFO] [8d3944b6-ca55-4450-be4d-b91dab193e6f] A2aAgent start call.
+2026 [INFO] [7ea51246-8c45-4db0-9175-05978ea96635] A2aAgent start call.
+2026 [INFO] [8d3944b6-ca55-4450-be4d-b91dab193e6f] A2A Task 31ea3c3a-3f61-4f02-b602-34f98ecc677e with status TaskStatus[state=SUBMITTED, message=null, timestamp=2026-04-20T09:03:19.825842700Z]
+2026 [INFO] [7ea51246-8c45-4db0-9175-05978ea96635] A2A Task 36b0722a-9c3f-449d-830a-1b825bde571f with status TaskStatus[state=SUBMITTED, message=null, timestamp=2026-04-20T09:03:19.835842400Z]
+2026 [INFO] [7ea51246-8c45-4db0-9175-05978ea96635] A2aAgent complete call.
+2026 [INFO] TripPlannerAgent response from A2A: #
+ 深
+圳到惠州一日游行程
+规划 (2026
+年5月1日)
+
+
+根据您的兴趣(自然、
+美食、轻松步行)和
+2000元预算
+，我为您精心设计了
+以下行程：
+
+## 行
+程概览
+- **
+日期**: 202
+6年5月1日
+(劳动节假期)
+-
+ **主题**: 自然风光
++地道美食+轻松漫步
+
+- **总预算**:
+ 约800
+-1000元
+(远低于您的200
+0元预算)
+
+## 上
+午行程
+
+###
+ 罗浮山风景区
+-
+ **亮点**: 岭
+南第一山，道教名
+山，森林覆盖率高，
+空气清新
+- **门票
+**: 约54
+元/人
+- **
+推荐路线**: 朱明
+洞景区→冲虚古
+观→黄龙观(
+全程平缓，适合轻松
+步行)
+- **最佳游览
+时间**: 上午9:
+00-12:
+00(避开午后炎热
+)
+- **交通**:
+ 从深圳北站乘坐高铁
+到惠州南站(约
+30分钟，票价约
+50元)，再打
+车前往罗浮山(
+约40分钟，8
+0-100元
+)
+
+## 午餐推荐
+
+
+### 罗浮
+山农家乐
+- **特色
+菜**: 山坑螺
+、水库鱼、客家
+酿豆腐、山坑鸡
+
+- **人均消费**:
+ 60-80
+元
+- **推荐理由
+**: 食材新鲜
+，价格实惠，可品尝
+正宗客家风味
+
+## 下午
+行程
+
+### 西湖
+风景区
+- **亮点**:
+ "苎萝西子"
+美誉，湖光山色
+，古迹众多
+-
+ **门票**: 免费
+开放
+- **推荐路线
+**: 平湖门→
+苏堤→泗洲塔
+→九曲桥(全程
+平坦，环湖步道
+)
+- **游览时间**:
+ 下午2:30-
+5:00
+-
+ **交通**: 从罗
+浮山打车至西湖
+(约40分钟，
+80-100
+元)
+
+## 晚
+餐推荐
+
+###
+ 水东街美食街
+
+- **特色美食**:
+
+  - 惠州
+梅菜扣肉(必
+尝!)
+  -
+ 阿嬷叫(萝卜糕
+)
+  - 横
+沥汤粉
+  -
+ 客家盐焗鸡
+ 50-70元
+
+- **人均消费**:
+
+- **推荐理由**:
+ 惠州最著名的
+美食街区，集中了各类
+地道小吃，价格亲民
+
+
+## 返程安排
+
+- **交通**:
+ 从水东街步行至
+惠州南站(约1
+5分钟)，乘坐高铁返回
+深圳(末班车约2
+2:00)
+
+##
+ 住宿建议(如需过
+夜)
+- **经济型
+**: 惠州西湖
+青年旅舍(约1
+20元/晚)
+
+- **舒适型**:
+ 惠州西湖喜来
+登酒店(约50
+0元/晚)
+
+##
+ 实用贴士
+1
+. **五一假期提醒**:
+ 5月1日为
+假期首日，景点可能
+人流较多，建议提前网上
+购票
+2. **天气
+准备**: 5月惠州
+气温约25-3
+2°C，建议携带防晒
+用品、遮阳帽和
+充足饮水
+3. **
+穿着建议**: 轻
+便透气的衣物和舒适的
+步行鞋
+4. **
+预算分配**:
+   -
+ 交通: 约
+250元(
+往返高铁+市内打
+车)
+   - 门票
+: 54元
+
+   - 餐饮
+: 约1
+50元
+   -
+ 备用金:
+ 建议预留20
+0元应对意外支出
+
+
+此行程充分考虑了您
+对自然、美食和轻松
+步行的需求，同时严格控制
+在预算范围内。如有
+特殊需求或想调整行程
+，请随时告知!
+2026 [INFO] [8d3944b6-ca55-4450-be4d-b91dab193e6f] A2aAgent complete call.
+2026 [INFO] RouteMakingAgent response from A2A: I
+'ll create a
+ driving
+ route plan from
+ Shenzhen to Huizhou
+ for your self-driving trip on
+ May 1, 2
+026.
+
+
+I
+ apologize
+ for the technical
+ difficulties with
+ the mapping service. Let me
+ try a different approach by
+ using more specific location
+ coordinates.
+
+
+I
+'m experiencing
+ technical issues with
+ the mapping
+ tools at the moment
+. However, I can
+ still provide you with a comprehensive
+ driving route plan from
+ Shenzhen to Huizhou
+ based on general knowledge of
+ the route.
+
+#
+ Driving Route Plan: Shenzhen
+ to Huizhou
+
+##
+ Trip Details
+- **Origin
+**: Shenzhen
+- **
+Destination**: Huizhou
+  
+- **Travel Date**: May
+ 1, 20
+26 (Labor Day Holiday
+)
+- **Transport Mode**:
+ Self-driving
+
+## Route Overview
+
+
+### Primary Route Options
+:
+
+**Option 1:
+ Via G15 Sh
+enyang-Haikou
+ Expressway (Recommended
+)**
+- Distance
+: Approximately 90
+-100 km
+
+- Estimated Travel
+ Time: 1.5
+ - 2 hours
+ (may be longer
+ on holiday)
+-
+ Main highways: G
+15, G
+25 Changshen Express
+way
+- Toll fees
+: Approximately ¥40-
+60
+
+**Option
+ 2: Via Provincial
+ Highways**
+- Distance:
+ Approximately 80-9
+0 km  
+- Estimated Travel
+ Time: 2 -
+ 2.5 hours
+
+- Routes through S
+356,
+ S255
+ provincial roads
+-
+ Lower toll costs but
+ potentially more traffic lights
+ and slower speeds
+
+## Detailed
+ Navigation (G15 Route
+):
+1. Start
+ from Shenzhen city
+ center
+2. Head
+ north toward Meiguan Avenue
+/Meiguan
+ Checkpoint
+3.
+ Enter Nanping Expressway (
+S30)
+4.
+ Connect to Shu
+iguan Expressway (G
+0422)
+5
+. Transfer to Sheny
+ang-Haikou Express
+way (G15)
+
+6. Take Chang
+shen Expressway (G
+25) toward
+ Huizhou
+7.
+ Exit at Huizhou
+ city center exits
+
+8. Navigate to final
+ destination via urban roads
+
+##
+ Important Travel Considerations for May
+ 1, 20
+26:
+
+###
+ Holiday Traffic Expectations:
+
+- **May 1st
+ is Labor Day**
+ - one of China
+'s major public holidays
+-
+ **Heavy traffic expected
+** on all major
+ highways, especially in
+ the morning (8
+ AM - 2
+ PM)
+- **Peak
+ departure times**: 7
+-11 AM from
+ Shenzhen
+- **Recommend
+ation**: Depart very
+ early (before 6
+ AM) or later
+ in the afternoon (after
+ 3 PM)
+
+### Preparation
+ Checklist:
+-
+ ✅ Ensure vehicle is
+ in good condition (
+tires, oil
+, fluids)
+- ✅
+ Have sufficient cash/card
+ for toll payments
+-
+ ✅ Download offline maps as
+ backup
+- ✅ Check
+ real-time traffic apps
+ before departure
+- ✅
+ Fill up fuel tank
+ before leaving
+-
+ ✅ Bring snacks and water for
+ potential delays
+
+###
+ Alternative Routes to Consider:
+-
+ If G15 becomes
+ heavily congested,
+ consider detouring via
+ Longgang District and
+ taking provincial roads
+-
+ Monitor traffic conditions and
+ be prepared to exit
+ at alternative interchanges
+
+###
+ Estimated Costs:
+- **
+Toll fees**: ¥
+40-60
+
+- **Fuel costs
+**: ¥60-8
+0 (depending on vehicle
+ efficiency)
+- **
+Total estimated cost**: ¥1
+00-14
+0
+
+### Rest
+ Stops Along the Way
+:
+- Service areas
+ available on G15/G
+25 expressways
+-
+ Multiple gas stations and
+ convenience stores at major
+ interchanges
+- Plan
+ for breaks if traveling
+ with children or elderly passengers
+
+
+Would you like me
+ to provide more specific information about
+ any particular aspect of this
+ route, such as detailed
+ directions for specific districts
+ in Shenzhen or Hu
+izhou, or information
+ about parking options in Hu
+izhou?
+2026 [WARN] Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: ServletOutputStream failed to flush: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。

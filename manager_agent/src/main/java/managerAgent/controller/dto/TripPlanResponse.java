@@ -1,15 +1,22 @@
-﻿package managerAgent.controller.dto;
+package managerAgent.controller.dto;
 
-/**
- * Trip plan response payload
- */
+import managerAgent.workflow.model.TaskExecutionRecord;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class TripPlanResponse {
 
     private boolean success;
+    private boolean degraded;
+    private boolean idempotentHit;
     private String message;
     private String prompt;
     private String result;
     private String generatedAt;
+    private String requestId;
+    private String workflowId;
+    private final List<TaskExecutionRecord> taskRecords = new ArrayList<>();
 
     public boolean isSuccess() {
         return success;
@@ -17,6 +24,22 @@ public class TripPlanResponse {
 
     public void setSuccess(boolean success) {
         this.success = success;
+    }
+
+    public boolean isDegraded() {
+        return degraded;
+    }
+
+    public void setDegraded(boolean degraded) {
+        this.degraded = degraded;
+    }
+
+    public boolean isIdempotentHit() {
+        return idempotentHit;
+    }
+
+    public void setIdempotentHit(boolean idempotentHit) {
+        this.idempotentHit = idempotentHit;
     }
 
     public String getMessage() {
@@ -49,5 +72,25 @@ public class TripPlanResponse {
 
     public void setGeneratedAt(String generatedAt) {
         this.generatedAt = generatedAt;
+    }
+
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public String getWorkflowId() {
+        return workflowId;
+    }
+
+    public void setWorkflowId(String workflowId) {
+        this.workflowId = workflowId;
+    }
+
+    public List<TaskExecutionRecord> getTaskRecords() {
+        return taskRecords;
     }
 }

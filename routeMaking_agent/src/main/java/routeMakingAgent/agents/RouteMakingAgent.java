@@ -12,11 +12,6 @@ import utils.ToolUtils;
 
 import java.util.Set;
 
-/**
- * author: Imooc
- * description: route making agent
- * date: 2026
- */
 @Component
 @Slf4j
 public class RouteMakingAgent {
@@ -42,7 +37,8 @@ public class RouteMakingAgent {
 
         return AgentUtils.getReActAgentBuilder(
                         "RouteMakingAgent",
-                        "擅长处理自驾游路线制定")
+                        "specialized in route making"
+                )
                 .toolkit(toolkit)
                 .build();
     }

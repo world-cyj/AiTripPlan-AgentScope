@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AiTripPlan 多 Agent 规划控制台</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>AiTripPlan 多 Agent 规划控制台</h1>
+      <p>输入行程需求，查看 DAG 任务执行状态、最终规划文本和原始响应。</p>
+      <div class="backend-row">
+        <label>后端地址
+          <input id="apiBaseUrl" value="" placeholder="留空默认同源，例如 http://localhost:18081" />
+        </label>
+        <button id="detect-backend-btn" type="button" class="ghost">自动探测</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>规划请求</h2>
+      <div class="preset-row">
+        <button type="button" class="ghost preset-btn" data-preset="weekend">周末轻度游模板</button>
+        <button type="button" class="ghost preset-btn" data-preset="family">亲子出行模板</button>
+        <button type="button" class="ghost preset-btn" data-preset="budget">预算优先模板</button>
+      </div>
+      <form id="plan-form" class="form-grid">
+        <label>请求 ID
+          <input id="requestId" placeholder="req-001（可空，空则自动生成）" />
+        </label>
+        <label>出发地
+          <input id="origin" value="Shenzhen" required />
+        </label>
+        <label>目的地
+          <input id="destination" value="Huizhou" required />
+        </label>
+        <label>出发日期
+          <input id="travelDate" type="date" value="2026-05-01" required />
+        </label>
+        <label>偏好
+          <input id="preferences" value="nature, food" />
+        </label>
+        <label>预算
+          <input id="budget" value="1500" />
+        </label>
+        <label>交通方式
+          <input id="transportMode" value="self-driving" />
+        </label>
+        <label>附加要求
+          <input id="extraRequirements" value="family friendly" />
+        </label>
+        <div class="form-actions">
+          <button id="submit-btn" type="submit">开始规划</button>
+          <button id="ping-btn" type="button" class="secondary">连通性检测</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>按 WorkflowId 查询</h2>
+      <div class="query-row">
+        <input id="workflowIdInput" placeholder="输入 workflowId" />
+        <button id="query-btn" type="button" class="secondary">查询</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>执行摘要</h2>
+      <div id="live-indicator" class="live-indicator idle">空闲</div>
+      <div id="summary" class="summary-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>DAG 任务执行明细</h2>
+      <div id="dag-board" class="dag-board"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>TaskId</th>
+              <th>角色</th>
+              <th>状态</th>
+              <th>重试次数</th>
+              <th>错误</th>
+              <th>输出预览</th>
+            </tr>
+          </thead>
+          <tbody id="task-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>最终规划结果</h2>
+      <div class="result-actions">
+        <button id="copy-result-btn" type="button" class="secondary">复制结果</button>
+      </div>
+      <pre id="result-text">等待执行...</pre>
+    </section>
+
+    <section class="panel">
+      <div class="raw-head">
+        <h2>原始响应 JSON</h2>
+        <button id="toggle-raw-btn" type="button" class="ghost">折叠</button>
+      </div>
+      <pre id="raw-output">等待执行...</pre>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

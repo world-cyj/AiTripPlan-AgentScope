@@ -1,0 +1,129 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.imooc:tripPlanner_agent >---------------------
+[INFO] Building tripPlanner_agent 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:4.0.2:run (default-cli) > test-compile @ tripPlanner_agent >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tripPlanner_agent ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ tripPlanner_agent ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tripPlanner_agent ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\AiTripPlan-AgentScope\tripPlanner_agent\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ tripPlanner_agent ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:4.0.2:run (default-cli) < test-compile @ tripPlanner_agent <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:4.0.2:run (default-cli) @ tripPlanner_agent ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.2)
+
+2026 [INFO] Starting TripPlannerAgentApplication using Java 21.0.10 with PID 58268 (D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes started by admin in D:\AiTripPlan-AgentScope\tripPlanner_agent)
+2026 [INFO] No active profile set, falling back to 1 default profile: "default"
+2026 [INFO] Tomcat initialized with port 8085 (http)
+2026 [INFO] Initializing ProtocolHandler ["http-nio-8085"]
+2026 [INFO] Starting service [Tomcat]
+2026 [INFO] Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026 [INFO] Root WebApplicationContext: initialization completed in 928 ms
+2026 [INFO] Starting ProtocolHandler ["http-nio-8085"]
+2026 [INFO] Tomcat started on port 8085 (http) with context path '/'
+2026 [INFO] Started TripPlannerAgentApplication in 1.797 seconds (process running for 2.526)
+2026 [INFO] Nacos Logging Adapter Builder: com.alibaba.nacos.logger.adapter.logback12.LogbackNacosLoggingAdapterBuilder
+2026 [INFO] Nacos Logging Adapter Builder: com.alibaba.nacos.logger.adapter.logback14.LogbackNacosLoggingAdapterBuilder
+2026 [INFO] Nacos Logging Adapter: com.alibaba.nacos.logger.adapter.logback14.LogbackNacosLoggingAdapter match ch.qos.logback.classic.Logger success.
+2026 [INFO] Nacos Logging Adapter Builder: com.alibaba.nacos.logger.adapter.log4j2.Log4j2NacosLoggingAdapterBuilder
+2026 [INFO] Ready to get current node abilities...
+2026 [INFO] Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+2026 [INFO] Initialize current abilities finish...
+2026 [INFO] [AbilityControlManager] Successfully initialize AbilityControlManager
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026 [INFO] [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026 [INFO] No host configured in deployment properties, try to get local IP address as host
+2026 [INFO] Local IP address: 192.168.223.1
+2026 [WARN] Not found input supportedTransports, use default transport: `JSONRPC`
+2026 [INFO] No preferred transport specified, using default transport `JSONRPC`.
+2026 [INFO] FileSystemSkillRepository initialized with base directory: D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills
+2026 [INFO] Registered skill 'Suggest-Sights_filesystem_D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills'
+2026 [INFO] Created tool group 'skill-build-in-tools': skill build-in tools, could contain(load_skill_through_path)
+2026 [INFO] Registered tool 'load_skill_through_path' in group 'skill-build-in-tools'
+2026 [INFO] Registered skill load tools to toolkit
+2026 [INFO] Registered tool 'call_suggestsightagent' in group 'ungrouped'
+2026 [INFO] Start to auto register agent TripPlannerAgent into Registries.
+2026 [INFO] Auto register agent TripPlannerAgent into Registry Nacos.
+2026 [WARN] Agent card TripPlannerAgent already exists, agentCard release might be ignored.
+2026 [INFO] Register agent card TripPlannerAgent to Nacos.
+2026 [INFO] Register agent card TripPlannerAgent to Nacos successfully.
+2026 [INFO] Register 1 endpoint(s) to Nacos
+2026 [INFO] Auto register agent TripPlannerAgent into Registry Nacos successfully.
+2026 [INFO] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026 [INFO] Initializing Servlet 'dispatcherServlet'
+2026 [INFO] Completed initialization in 110 ms
+2026 [INFO] Handling streaming request, returning SSE Flux
+2026 [INFO] [aea5e35e-80de-42cb-8a99-87add09aa353] Created new task.
+2026 [INFO] [aea5e35e-80de-42cb-8a99-87add09aa353] Starting streaming request processing
+2026 [INFO] [aea5e35e-80de-42cb-8a99-87add09aa353] Subscribed to executeFunction result stream
+2026 [INFO] FileSystemSkillRepository initialized with base directory: D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills
+2026 [INFO] Registered skill 'Suggest-Sights_filesystem_D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills'
+2026 [INFO] Created tool group 'skill-build-in-tools': skill build-in tools, could contain(load_skill_through_path)
+2026 [INFO] Registered tool 'load_skill_through_path' in group 'skill-build-in-tools'
+2026 [INFO] Registered skill load tools to toolkit
+2026 [INFO] Activated skill: Suggest-Sights_filesystem_D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills
+2026 [INFO] [aea5e35e-80de-42cb-8a99-87add09aa353] Process agent output for non-blocking request completed.
+2026 [INFO] [aea5e35e-80de-42cb-8a99-87add09aa353] Subscribe and process stream output terminated: onComplete
+2026 [INFO] [aea5e35e-80de-42cb-8a99-87add09aa353] Agent execution completed successfully
+2026 [INFO] Handling streaming request, returning SSE Flux
+2026 [INFO] [4450997d-9bf3-49fc-92cb-7e7b1ef76a3a] Created new task.
+2026 [INFO] [4450997d-9bf3-49fc-92cb-7e7b1ef76a3a] Starting streaming request processing
+2026 [INFO] [4450997d-9bf3-49fc-92cb-7e7b1ef76a3a] Subscribed to executeFunction result stream
+2026 [INFO] FileSystemSkillRepository initialized with base directory: D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills
+2026 [INFO] Registered skill 'Suggest-Sights_filesystem_D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills'
+2026 [INFO] Created tool group 'skill-build-in-tools': skill build-in tools, could contain(load_skill_through_path)
+2026 [INFO] Registered tool 'load_skill_through_path' in group 'skill-build-in-tools'
+2026 [INFO] Registered skill load tools to toolkit
+2026 [INFO] Activated skill: Suggest-Sights_filesystem_D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills
+2026 [INFO] [4450997d-9bf3-49fc-92cb-7e7b1ef76a3a] Process agent output for non-blocking request completed.
+2026 [INFO] [4450997d-9bf3-49fc-92cb-7e7b1ef76a3a] Subscribe and process stream output terminated: onComplete
+2026 [INFO] [4450997d-9bf3-49fc-92cb-7e7b1ef76a3a] Agent execution completed successfully
+2026 [INFO] [f6dfc386-efbf-4b32-9144-32028f59a031] Created new task.
+2026 [INFO] Handling streaming request, returning SSE Flux
+2026 [INFO] [f6dfc386-efbf-4b32-9144-32028f59a031] Starting streaming request processing
+2026 [INFO] [f6dfc386-efbf-4b32-9144-32028f59a031] Subscribed to executeFunction result stream
+2026 [INFO] FileSystemSkillRepository initialized with base directory: D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills
+2026 [INFO] Registered skill 'Suggest-Sights_filesystem_D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills'
+2026 [INFO] Created tool group 'skill-build-in-tools': skill build-in tools, could contain(load_skill_through_path)
+2026 [INFO] Registered tool 'load_skill_through_path' in group 'skill-build-in-tools'
+2026 [INFO] Registered skill load tools to toolkit
+2026 [INFO] Activated skill: Suggest-Sights_filesystem_D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills
+2026 [INFO] [f6dfc386-efbf-4b32-9144-32028f59a031] Process agent output for non-blocking request completed.
+2026 [INFO] [f6dfc386-efbf-4b32-9144-32028f59a031] Agent execution completed successfully
+2026 [INFO] [f6dfc386-efbf-4b32-9144-32028f59a031] Subscribe and process stream output terminated: onComplete
+2026 [INFO] Handling streaming request, returning SSE Flux
+2026 [INFO] [36b0722a-9c3f-449d-830a-1b825bde571f] Created new task.
+2026 [INFO] [36b0722a-9c3f-449d-830a-1b825bde571f] Starting streaming request processing
+2026 [INFO] [36b0722a-9c3f-449d-830a-1b825bde571f] Subscribed to executeFunction result stream
+2026 [INFO] FileSystemSkillRepository initialized with base directory: D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills
+2026 [INFO] Registered skill 'Suggest-Sights_filesystem_D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills'
+2026 [INFO] Created tool group 'skill-build-in-tools': skill build-in tools, could contain(load_skill_through_path)
+2026 [INFO] Registered tool 'load_skill_through_path' in group 'skill-build-in-tools'
+2026 [INFO] Registered skill load tools to toolkit
+2026 [INFO] Activated skill: Suggest-Sights_filesystem_D:\AiTripPlan-AgentScope\tripPlanner_agent\target\classes\skills
+2026 [INFO] [36b0722a-9c3f-449d-830a-1b825bde571f] Process agent output for non-blocking request completed.
+2026 [INFO] [36b0722a-9c3f-449d-830a-1b825bde571f] Subscribe and process stream output terminated: onComplete
+2026 [INFO] [36b0722a-9c3f-449d-830a-1b825bde571f] Agent execution completed successfully
