@@ -13,15 +13,15 @@
 
 ---
 
-## 4. 整体架构
+##  整体架构
 
-### 4.1 模块划分
+### 1 模块划分
 - `manager_agent`：主控服务，提供 HTTP API 和前端静态页面。
 - `tripPlanner_agent`：行程内容规划子 Agent。
 - `routeMaking_agent`：路线规划子 Agent。
 - `commons`：公共工具（模型配置、Nacos 客户端、Toolkit 封装）。
 
-### 4.2 调用链（时序）
+### 2 调用链（时序）
 1. 用户在前端提交需求 -> `POST /app`。
 2. `manager_agent` 创建 DAG 任务并并行执行首层节点。
 3. manager 通过 `A2aAgent + NacosAgentCardResolver` 调用 `TripPlannerAgent` 与 `RouteMakingAgent`。
@@ -31,7 +31,7 @@
 
 ---
 
-## 5. 关键技术栈与“用了它做什么”
+##  关键技术栈与“用了它做什么”
 
 | 技术 | 用在何处 | 解决什么问题 |
 |---|---|---|
@@ -47,15 +47,15 @@
 
 ---
 
-## 6. Manager 端核心设计
+##  Manager 端核心设计
 
-### 6.1 入口 API
+### 1 入口 API
 文件：`manager_agent/src/main/java/managerAgent/controller/AppController.java`
 - `GET /app/ping`：健康检查。
 - `POST /app`：执行一次完整规划流程。
 - `GET /app/workflow/{workflowId}`：查询历史执行结果。
 
-### 6.2 工作流编排器（核心）
+### 2 工作流编排器（核心）
 文件：`manager_agent/src/main/java/managerAgent/workflow/MultiAgentWorkflowCoordinator.java`
 
 核心能力：
@@ -65,7 +65,7 @@
 4. 补偿机制：关键节点失败 -> 标记 `COMPENSATED` 并给出 fallback 输出。
 5. 最终兜底：`coordinate_final` 没有输出时自动构造 fallback 方案。
 
-### 6.3 DAG 任务定义
+### 3 DAG 任务定义
 文件：`manager_agent/src/main/java/managerAgent/workflow/planner/WorkflowPlanner.java`
 
 任务节点：
@@ -77,7 +77,7 @@
 
 状态机：`PENDING -> RUNNING -> SUCCESS/FAILED/COMPENSATED/SKIPPED`
 
-### 6.4 角色分工
+### 4 角色分工
 文件：`manager_agent/src/main/java/managerAgent/workflow/model/AgentRole.java`
 - `PLANNER`
 - `EXECUTOR_TRIP`
@@ -85,14 +85,14 @@
 - `REVIEWER`
 - `COORDINATOR`
 
-### 6.5 评审策略
+### 5 评审策略
 文件：`manager_agent/src/main/java/managerAgent/workflow/review/QualityReviewer.java`
 - 空输出：`REJECT`
 - 输出过短：`WARN`
 - 包含 `unavailable/fallback`：`WARN`
 - 其它：`PASS`
 
-### 6.6 幂等性
+### 6 幂等性
 文件：`workflow/service/WorkflowApplicationService.java` + `workflow/store/WorkflowRunStore.java`
 - 使用 `requestId` 做幂等键。
 - 若命中缓存，直接返回已有结果并标记 `idempotent hit`。
@@ -100,33 +100,33 @@
 
 ---
 
-## 7. Agent 间通信（A2A）与降级策略
+##  Agent 间通信（A2A）与降级策略
 
-### 7.1 A2A 主路径
+### 1 A2A 主路径
 文件：`manager_agent/src/main/java/managerAgent/tool/RemoteAgentTool.java`
 - manager 使用 `A2aAgent.builder().name(...).agentCardResolver(new NacosAgentCardResolver(...))` 调用远端 Agent。
 - 依赖 `commons/utils/NacosUtil.java` 创建 Nacos AI 客户端。
 
-### 7.2 失败分类与重试
+### 2 失败分类与重试
 - `timeout/connection/503/429` 视为可重试。
 - 异常封装为 `RemoteExecutionException(retryable)`。
 
-### 7.3 HTTP fallback（兼容场景）
+### 3 HTTP fallback（兼容场景）
 在识别到 Nacos 能力类报错（例如历史出现的 501 文案）时，可走回退接口：
 - `TRIP_PLANNER_HTTP_URL` 默认 `http://localhost:8085/agent/execute`
 - `ROUTE_MAKING_HTTP_URL` 默认 `http://localhost:8082/agent/execute`
 
 ---
 
-## 8. Trip Planner Agent 设计
+##  Trip Planner Agent 设计
 
-### 8.1 主要职责
+### 1 主要职责
 文件：`tripPlanner_agent/src/main/java/tripPlannerAgent/agents/TripPlannerAgent.java`
 - 构建 `TripPlannerAgent` 主 Agent。
 - 通过 `SubAgentTool` 挂载 `SuggestSightAgent` 作为子能力。
 - 可配置 A2A 自动注册到 Nacos（由配置驱动）。
 
-### 8.2 Skills 能力
+### 2 Skills 能力
 关键文件：
 - `tripPlanner_agent/src/main/resources/skills/Suggest-Sights/SKILL.md`
 - `tripPlanner_agent/src/main/resources/skills/Make-A-Table/SKILL.md`
@@ -136,53 +136,53 @@
 - `SkillBox + JarSkillRepositoryAdapter("skills")` 加载技能。
 - 技能与工具（如 `Calculate.sum`）一起挂到 Agent。
 
-### 8.3 直接执行接口（用于 fallback/调试）
+### 3 直接执行接口（用于 fallback/调试）
 文件：`tripPlanner_agent/src/main/java/tripPlannerAgent/controller/AgentExecuteController.java`
 - `POST /agent/execute`，输入 `taskText`，流式聚合文本并返回。
 
 ---
 
-## 9. Route Making Agent 设计
+##  Route Making Agent 设计
 
-### 9.1 主要职责
+### 1 主要职责
 文件：`routeMaking_agent/src/main/java/routeMakingAgent/agents/RouteMakingAgent.java`
 - 初始化百度地图 MCP 客户端。
 - 将 MCP 工具注册到 `Toolkit`。
 - 构建 `RouteMakingAgent` 执行路线规划。
 
-### 9.2 MCP 集成
+### 2 MCP 集成
 文件：`routeMaking_agent/src/main/java/routeMakingAgent/mcp/BaiduMapMCP.java`
 - 读取 `BAIDU_MCP_SSE_URL`。
 - `McpClientBuilder.sseTransport(...).timeout(120s)`。
 - 启动后打印已加载工具列表。
 
-### 9.3 直接执行接口
+### 3 直接执行接口
 文件：`routeMaking_agent/src/main/java/routeMakingAgent/controller/AgentExecuteController.java`
 - `POST /agent/execute`，用于 fallback 与联调。
 
 ---
 
-## 10. Commons 公共模块
+##  Commons 公共模块
 
-### 10.1 模型构建工具
+### 1 模型构建工具
 文件：`commons/src/main/java/utils/AgentUtils.java`
 - 从 `DASHSCOPE_API_KEY` 读取必填密钥。
 - 可选 `DASHSCOPE_MODEL`（默认 `qwen3-max`）。
 - 提供 ReActAgent Builder 的统一入口。
 
-### 10.2 Nacos 工具
+### 2 Nacos 工具
 文件：`commons/src/main/java/utils/NacosUtil.java`
 - 从 `NACOS_SERVER_ADDR` 读取地址（默认 `localhost:8848`）。
 - 创建 Nacos AI Service 客户端。
 
-### 10.3 Tool 工具注册辅助
+### 3 Tool 工具注册辅助
 文件：`commons/src/main/java/utils/ToolUtils.java`
 - 普通 Java 工具对象注册。
 - MCP 客户端工具注册。
 
 ---
 
-## 11. 前端控制台（可演示亮点）
+##  前端控制台（可演示亮点）
 
 目录：`manager_agent/src/main/resources/static/`
 - `index.html`
@@ -200,25 +200,25 @@
 
 ---
 
-## 12. 配置清单（重点）
+##  配置清单（重点）
 
-### 12.1 必填
+### 1 必填
 - `DASHSCOPE_API_KEY`：大模型调用密钥。
 
-### 12.2 强烈建议
+### 2 强烈建议
 - `NACOS_SERVER_ADDR`：如 `192.168.32.129:8848`。
 - `A2A_SERVER_ENABLED=true`：启用子 Agent 自动注册。
 
-### 12.3 可选
+### 3 可选
 - `DASHSCOPE_MODEL`：默认 `qwen3-max`。
 - `BAIDU_MCP_SSE_URL`：路线 Agent 地图 MCP 工具入口。
 - `TRIP_PLANNER_HTTP_URL` / `ROUTE_MAKING_HTTP_URL`：A2A 异常时回退地址。
 
 ---
 
-## 13. 启动与联调
+##  启动与联调
 
-### 13.1 推荐一键启动
+### 1 推荐一键启动
 ```powershell
 ./scripts/start-all.ps1 -EnableA2A $true -NacosServerAddr "192.168.32.129:8848" -MavenRepoLocal ".\.m2repo"
 ```
@@ -228,7 +228,7 @@
 2. 清理 manager 旧端口进程。
 3. 子 Agent 端口若已占用可复用，不阻断 manager 启动。
 
-### 13.2 冒烟测试
+### 2 冒烟测试
 ```powershell
 ./scripts/smoke-test.ps1 -ManagerBaseUrl "http://localhost:8081"
 ```
@@ -242,9 +242,9 @@
 
 ---
 
-## 14. API 说明
+##  API 说明
 
-### 14.1 `POST /app`
+### 1 `POST /app`
 请求体示例：
 ```json
 {
@@ -266,15 +266,15 @@
 - `workflowId`：用于后续查询。
 - `taskRecords[]`：每个节点执行详情。
 
-### 14.2 `GET /app/workflow/{workflowId}`
+### 2 `GET /app/workflow/{workflowId}`
 - 查询历史流程状态与结果。
 
-### 14.3 `GET /app/ping`
+### 3 `GET /app/ping`
 - 返回 `pong`。
 
 ---
 
-## 15. 已解决的典型工程问题（面试加分）
+##  已解决的典型工程问题（面试加分）
 
 1. **A2A 注册成功但 manager 调用失败**
 - 排查路径：Nacos 能力、端口、调用链、日志对齐。
